@@ -48,7 +48,7 @@ body { font-family: var(--font-body); line-height: 1.6; color: var(--color-text)
 
 /* SECTION HÉROS */
 .hero { height: 100vh; position: relative; display: flex; align-items: center; color: var(--color-white); overflow: hidden; text-align: left; }
-.hero-background { position: absolute; inset: 0; background-image: url('image1.jpg'); /* CORRECTED PATH */ background-size: cover; background-position: center; animation: hero-zoom 30s ease-in-out infinite alternate; }
+.hero-background { position: absolute; inset: 0; background-image: url('images/image1.jpg'); /* CORRECTED PATH */ background-size: cover; background-position: center; animation: hero-zoom 30s ease-in-out infinite alternate; }
 .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.05) 100%); }
 .hero-content { position: relative; z-index: 2; }
 .hero-content h1 { font-family: var(--font-heading); font-size: 4.5rem; font-weight: 700; color: var(--color-white); text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); margin-bottom: 1rem; max-width: 800px; }
@@ -75,9 +75,9 @@ body { font-family: var(--font-body); line-height: 1.6; color: var(--color-text)
 .product-card { background: var(--color-white); box-shadow: var(--shadow-light); border-radius: var(--border-radius); overflow: hidden; transition: transform var(--transition-smooth), box-shadow var(--transition-smooth); display: flex; flex-direction: column; }
 .product-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-strong); }
 .card-image { height: 250px; background-size: cover; background-position: center; }
-.card-image.img-1 { background-image: url('image1.jpg'); }  /* CORRECTED PATH */
-.card-image.img-2 { background-image: url('image2.jpeg'); } /* CORRECTED PATH */
-.card-image.img-3 { background-image: url('image3.jpeg'); } /* CORRECTED PATH */
+.card-image.img-1 { background-image: url('images/image1.jpg'); }  /* CORRECTED PATH */
+.card-image.img-2 { background-image: url('images/image2.jpeg'); } /* CORRECTED PATH */
+.card-image.img-3 { background-image: url('images/image3.jpeg'); } /* CORRECTED PATH */
 .card-content { padding: 2rem; display: flex; flex-direction: column; flex-grow: 1; }
 .card-content h3 { font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 1rem; color: var(--color-primary); }
 .card-content p { flex-grow: 1; margin-bottom: 1.5rem; }
