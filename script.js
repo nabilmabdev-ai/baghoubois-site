@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initHeroParallax();         // Adds a depth effect
     initMobileMenu();
     updateCopyrightYear();
+    initBackToTopButton();      // For the new scroll-to-top button
 });
 
 /**
@@ -108,6 +109,7 @@ function animateCounter(counter) {
 
 /**
  * Toggles the mobile navigation menu and ensures links close the menu on click.
+ * Also manages ARIA attributes for accessibility.
  */
 function initMobileMenu() {
     const navToggle = document.querySelector('.nav-toggle');
@@ -115,13 +117,15 @@ function initMobileMenu() {
     if (!navToggle || !mainNav) return;
 
     navToggle.addEventListener('click', () => {
-        document.body.classList.toggle('nav-open');
+        const isOpen = document.body.classList.toggle('nav-open');
+        navToggle.setAttribute('aria-expanded', isOpen);
     });
 
     // Close menu when a link is clicked
     mainNav.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
             document.body.classList.remove('nav-open');
+            navToggle.setAttribute('aria-expanded', 'false');
         });
     });
 }
@@ -134,4 +138,25 @@ function updateCopyrightYear() {
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
     }
+}
+
+/**
+ * Shows/hides a "back to top" button based on scroll position and
+ * handles the smooth scroll behavior on click.
+ */
+function initBackToTopButton() {
+    const button = document.querySelector('.back-to-top');
+    if (!button) return;
+
+    window.addEventListener('scroll', () => {
+        button.classList.toggle('visible', window.scrollY > 300);
+    });
+
+    button.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
 }
